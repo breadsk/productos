@@ -28,7 +28,7 @@ public class ProductoRepository {
 
     // Metodo para retornar todos los productos
     // Simula un SELECT * FROM productos;
-    public List<Producto> findAll() {
+    public List<Producto> getAllProducts() {
         return listaProductos;
     }
 
@@ -39,6 +39,11 @@ public class ProductoRepository {
             }
         }
         return null;
+    }
+
+    public Producto saveProduct(Producto producto) {
+        listaProductos.add(producto);
+        return producto;
     }
 
     public Producto updateProducto(Producto pro) {

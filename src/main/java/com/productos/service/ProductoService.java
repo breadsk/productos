@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProductoService {
 
-    
     @Autowired
     private ProductoRepository productoRepository;
 
@@ -36,7 +35,11 @@ public class ProductoService {
         return productoRepository.save(producto);
     }
 
-    public void deleteProduct(int id) {        
+    public void deleteProduct(int id) {
         productoRepository.deleteById(id);
+    }
+
+    public boolean existsByNombre(String nombre) {
+        return productoRepository.existsByNombre(nombre);
     }
 }

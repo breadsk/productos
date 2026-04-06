@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "categoria")
 @Data
@@ -28,6 +30,7 @@ public class Categoria {
 
     // Relacion OneToMany con Producto
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Producto> productos = new ArrayList<>();
 
     // Metodo helper para mantener ambas entidades sincronizadas
@@ -39,6 +42,12 @@ public class Categoria {
     public void removeProducto(Producto producto) {
         productos.remove(producto);
         producto.setCategoria(null);
+    }
+
+    public Categoria(String nombre, String descripcion, List<Producto> productos) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.productos = productos;
     }
 
 }

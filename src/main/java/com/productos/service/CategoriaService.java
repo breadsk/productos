@@ -44,7 +44,7 @@ public class CategoriaService {
     }
 
     // Buscar categoria por nombre
-    public Categoria fundByNombre(String nombre) {
+    public Categoria findByNombre(String nombre) {
         return categoriaRepository.findByNombre(nombre);
     }
 

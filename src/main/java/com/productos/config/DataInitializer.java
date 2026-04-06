@@ -38,40 +38,37 @@ public class DataInitializer implements CommandLineRunner {
         }
 
         // Categoría Accesorios (sin cambios, está bien)
-        // Categoria accesorios = null;
-        // if (!categoriaService.existsByNombre("Accesorios")) {
-        // accesorios = new Categoria(null, "Accesorios", "Periféricos, cables,
-        // adaptadores", new ArrayList<>());
-        // accesorios = categoriaService.saveCategoria(accesorios);
-        // System.out.println("✅ Categoría guardada: Accesorios");
-        // } else {
-        // accesorios = categoriaService.findByNombre("Accesorios");
-        // System.out.println("⚠️ Categoría ya existente: Accesorios");
-        // }
+        Categoria accesorios = null;
+        if (!categoriaService.existsByNombre("Accesorios")) {
+            accesorios = new Categoria(null, "Accesorios", "Periféricos, cables,adaptadores", new ArrayList<>());
+            accesorios = categoriaService.saveCategoria(accesorios);
+            System.out.println("✅ Categoría guardada: Accesorios");
+        } else {
+            accesorios = categoriaService.findByNombre("Accesorios");
+            System.out.println("⚠️ Categoría ya existente: Accesorios");
+        }
 
-        // // Categoría Hogar (sin cambios)
-        // Categoria hogar = null;
-        // if (!categoriaService.existsByNombre("Hogar")) {
-        // hogar = new Categoria(null, "Hogar", "Artículos para el hogar y cocina", new
-        // ArrayList<>());
-        // hogar = categoriaService.saveCategoria(hogar);
-        // System.out.println("✅ Categoría guardada: Hogar");
-        // } else {
-        // hogar = categoriaService.findByNombre("Hogar");
-        // System.out.println("⚠️ Categoría ya existente: Hogar");
-        // }
+        // Categoría Hogar (sin cambios)
+        Categoria hogar = null;
+        if (!categoriaService.existsByNombre("Hogar")) {
+            hogar = new Categoria(null, "Hogar", "Artículos para el hogar y cocina", new ArrayList<>());
+            hogar = categoriaService.saveCategoria(hogar);
+            System.out.println("✅ Categoría guardada: Hogar");
+        } else {
+            hogar = categoriaService.findByNombre("Hogar");
+            System.out.println("⚠️ Categoría ya existente: Hogar");
+        }
 
-        // // Categoría Hogar (sin cambios)
-        // Categoria oficina = null;
-        // if (!categoriaService.existsByNombre("Oficina")) {
-        // oficina = new Categoria(null, "Oficina", "Artículos para la oficina", new
-        // ArrayList<>());
-        // oficina = categoriaService.saveCategoria(oficina);
-        // System.out.println("✅ Categoría guardada: Oficina");
-        // } else {
-        // hogar = categoriaService.findByNombre("Oficina");
-        // System.out.println("⚠️ Categoría ya existente: Oficina");
-        // }
+        // Categoría Hogar (sin cambios)
+        Categoria oficina = null;
+        if (!categoriaService.existsByNombre("Oficina")) {
+            oficina = new Categoria(null, "Oficina", "Artículos para la oficina", new ArrayList<>());
+            oficina = categoriaService.saveCategoria(oficina);
+            System.out.println("✅ Categoría guardada: Oficina");
+        } else {
+            hogar = categoriaService.findByNombre("Oficina");
+            System.out.println("⚠️ Categoría ya existente: Oficina");
+        }
 
         // Creamos productos de prueba
         // Producto 1: Laptop Gamer (categoría Electrónica)
@@ -84,35 +81,35 @@ public class DataInitializer implements CommandLineRunner {
             System.out.println("⚠️ Producto ya existente: Laptop Gamer");
         }
 
-        // // Producto 2: Mouse Inalámbrico (categoría Accesorios)
-        // if (!productoService.existsByNombre("Mouse Inalámbrico")) {
-        // Producto mouse = new Producto("Mouse Inalámbrico", 25.50, 50);
-        // mouse.setCategoria(accesorios);
-        // productoService.saveProduct(mouse);
-        // System.out.println("✅ Producto guardado: Mouse Inalámbrico → Accesorios");
-        // } else {
-        // System.out.println("⚠️ Producto ya existente: Mouse Inalámbrico");
-        // }
+        // Producto 2: Mouse Inalámbrico (categoría Accesorios)
+        if (!productoService.existsByNombre("Mouse Inalámbrico")) {
+            Producto mouse = new Producto("Mouse Inalámbrico", 25.50, 50);
+            mouse.setCategoria(accesorios);
+            productoService.saveProduct(mouse);
+            System.out.println("✅ Producto guardado: Mouse Inalámbrico → Accesorios");
+        } else {
+            System.out.println("⚠️ Producto ya existente: Mouse Inalámbrico");
+        }
 
         // // Producto 3: Teclado Mecánico (categoría Accesorios)
-        // if (!productoService.existsByNombre("Teclado Mecánico")) {
-        // Producto teclado = new Producto("Teclado Mecánico", 75.00, 30);
-        // teclado.setCategoria(hogar);
-        // productoService.saveProduct(teclado);
-        // System.out.println("✅ Producto guardado: Teclado Mecánico → Accesorios");
-        // } else {
-        // System.out.println("⚠️ Producto ya existente: Teclado Mecánico");
-        // }
+        if (!productoService.existsByNombre("Teclado Mecánico")) {
+            Producto teclado = new Producto("Teclado Mecánico", 75.00, 30);
+            teclado.setCategoria(hogar);
+            productoService.saveProduct(teclado);
+            System.out.println("✅ Producto guardado: Teclado Mecánico → Accesorios");
+        } else {
+            System.out.println("⚠️ Producto ya existente: Teclado Mecánico");
+        }
 
-        // // Producto 4: Sartén Antiadherente (categoría Hogar)
-        // if (!productoService.existsByNombre("Sartén Antiadherente")) {
-        // Producto sarten = new Producto("Sartén Antiadherente", 35.00, 20);
-        // sarten.setCategoria(oficina);
-        // productoService.saveProduct(sarten);
-        // System.out.println("✅ Producto guardado: Sartén Antiadherente → Hogar");
-        // } else {
-        // System.out.println("⚠️ Producto ya existente: Sartén Antiadherente");
-        // }
+        // Producto 4: Sartén Antiadherente (categoría Hogar)
+        if (!productoService.existsByNombre("Sartén Antiadherente")) {
+            Producto sarten = new Producto("Sartén Antiadherente", 35.00, 20);
+            sarten.setCategoria(oficina);
+            productoService.saveProduct(sarten);
+            System.out.println("✅ Producto guardado: Sartén Antiadherente → Hogar");
+        } else {
+            System.out.println("⚠️ Producto ya existente: Sartén Antiadherente");
+        }
     }
 
 }

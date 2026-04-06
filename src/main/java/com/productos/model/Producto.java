@@ -50,6 +50,12 @@ public class Producto {
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
 
+    public Producto(String nombre, Double precio, int stock) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
+    }
+
     public Producto(String nombre, Double precio, int stock, Categoria categoria) {
         this.nombre = nombre;
         this.precio = precio;

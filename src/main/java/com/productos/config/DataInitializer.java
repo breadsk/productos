@@ -17,9 +17,9 @@ public class DataInitializer implements CommandLineRunner {
 
         // Tres productos de ejemplo
         Producto[] productosEjemplo = {
-                new Producto(null, "Laptop Gamer", 1200.99, 10),
-                new Producto(null, "Mouse Inalámbrico", 25.50, 50),
-                new Producto(null, "Teclado Mecánico", 75.00, 30)
+                new Producto("Laptop Gamer", 1200.99, 10),
+                new Producto("Mouse Inalámbrico", 25.50, 50),
+                new Producto("Teclado Mecánico", 75.00, 30)
         };
 
         for (Producto p : productosEjemplo) {
